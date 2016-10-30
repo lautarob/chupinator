@@ -23,10 +23,6 @@ default: &default
 
 development:
   <<: *default
-  user: postgres
-  password: root
-  host: localhost
-  port: 5433
   database: chupinator_development
 
   # The specified database role being used to connect to postgres.
@@ -85,8 +81,4 @@ test:
 production:
   <<: *default
   database: chupinator_production
-  encoding: utf8
-  pool: 15
-  adapter: postgresql
-  host: localhost
-  password:
+  password: <%= ENV['CHUPINATOR_DATABASE_PASSWORD'] %>
