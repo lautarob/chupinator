@@ -23,6 +23,10 @@ default: &default
 
 development:
   <<: *default
+  username: postgres
+  password: root
+  host: localhost
+  port: 5433
   database: chupinator_development
 
   # The specified database role being used to connect to postgres.
