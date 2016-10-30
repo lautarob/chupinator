@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :desafios
+  resources :desafios do
+    collection do
+      get :random, to: 'desafios#get_desafio_random'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

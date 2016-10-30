@@ -4,15 +4,23 @@ class DesafiosController < ApplicationController
   # GET /desafios
   # GET /desafios.json
   def index
-    @desafios = Desafio.where(nil)
-    filtering_params(params).each do |key, value|
-      @desafios = @desafios.public_send(key, value) if value.present?
-    end
+    @desafios = Desafio.all
   end
 
   # GET /desafios/1
   # GET /desafios/1.json
   def show
+  end
+
+  def get_desafio_random
+    @desafios = Desafio.where(nil)
+    filtering_params(params).each do |key, value|
+      @desafio = @desafios.public_send(key, value).offset(rand(Desafio.count)).first if value.present?
+    end
+    respond_to do |format|
+      format.html { redirect_to @desafio, notice: 'Desafio was successfully created.' }
+      format.json { render @desafio }
+    end
   end
 
   # GET /desafios/new
