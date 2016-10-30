@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @desafio.tipo %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @desafio.titulo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @desafio.descripcion %>
+</p>
+
+<p>
+  <strong>Puntos:</strong>
+  <%= @desafio.puntos %>
+</p>
+
+<%= link_to 'Edit', edit_desafio_path(@desafio) %> |
+<%= link_to 'Back', desafios_path %>

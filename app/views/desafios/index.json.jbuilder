@@ -1,0 +1,1 @@
+json.array! @desafios, partial: 'desafios/desafio', as: :desafio

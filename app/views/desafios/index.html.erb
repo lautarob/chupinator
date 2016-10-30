@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Desafios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th>Puntos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @desafios.each do |desafio| %>
+      <tr>
+        <td><%= desafio.tipo %></td>
+        <td><%= desafio.titulo %></td>
+        <td><%= desafio.descripcion %></td>
+        <td><%= desafio.puntos %></td>
+        <td><%= link_to 'Show', desafio %></td>
+        <td><%= link_to 'Edit', edit_desafio_path(desafio) %></td>
+        <td><%= link_to 'Destroy', desafio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Desafio', new_desafio_path %>

@@ -1,0 +1,1 @@
+json.partial! "desafios/desafio", desafio: @desafio
