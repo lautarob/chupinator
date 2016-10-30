@@ -17,16 +17,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  user: postgres
-  password: root
-  host: localhost
-  port: 5433
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
 development:
   <<: *default
+  user: postgres
+  password: root
+  host: localhost
+  port: 5433
   database: chupinator_development
 
   # The specified database role being used to connect to postgres.
